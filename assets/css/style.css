@@ -1,0 +1,136 @@
+
+    .elementor-loop-filter-wrapper {
+        margin-bottom: 25px;
+        font-family: inherit;
+        position: relative;
+    }
+
+    /* Search field container */
+    .elementor-loop-search-wrapper {
+        position: relative;
+        width: 100%;
+        margin-bottom: 12px;
+    }
+
+    /* Input field */
+    .elementor-loop-search-input {
+        width: 100%;
+        padding: 12px 40px 12px 14px;
+        font-size: 15px;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        transition: all 0.3s ease;
+        outline: none;
+        background: #fff;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+    }
+
+    .elementor-loop-search-input:focus {
+        border-color: #818cf8;
+        box-shadow: 0 0 0 3px rgba(129, 140, 248, 0.2);
+    }
+
+    /* Clear (×) button */
+    .elementor-loop-clear {
+        position: absolute;
+        padding-top:5px;
+        padding-bottom:5px;
+        padding-left:5px;
+        padding-right:5px;
+        margin:0;
+        top: 50%;
+        right: 12px;
+        transform: translateY(-50%);
+        border: none;
+        background: transparent;
+        font-size: 18px;
+        color: #888;
+        cursor: pointer;
+        display: none;
+        transition: all 0.25s ease;
+        border-radius: 50%;
+        width: 28px;
+        height: 28px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .elementor-loop-clear:hover {
+        background: #fff;
+        color: #0073e6;
+        box-shadow: 0 0 6px rgba(0, 115, 230, 0.25);
+    }
+
+    .elementor-loop-clear:active {
+        transform: translateY(-50%) scale(0.95);
+    }
+
+    [dir="rtl"] .elementor-loop-clear {
+        right: auto;
+        left: 12px;
+    }
+
+    /* Sort dropdown */
+    .elementor-loop-sort {
+        width: 100%;
+        border: 1.5px solid #dcdcdc;
+        border-radius: 8px;
+        background-color: #fff;
+        font-size: 15px;
+        color: #333;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
+        white-space: normal;
+        overflow: visible;
+        text-overflow: ellipsis;
+         appearance: none; /* hides native arrow */
+        -webkit-appearance: none;
+        -moz-appearance: none;
+        background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg width='12' height='8' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23999' stroke-width='2' fill='none'/%3E%3C/svg%3E");
+        background-repeat: no-repeat;
+        background-position: right 14px center;
+        background-size: 14px;
+        box-sizing: border-box;
+    }
+
+    .elementor-loop-sort:focus {
+        border-color: #0073e6;
+        box-shadow: 0 0 0 3px rgba(0, 115, 230, 0.1);
+        outline: none;
+    }
+
+    .elementor-loop-sort:hover {
+        border-color: #ccc;
+    }
+
+    /* No results */
+    .elementor-loop-no-results {
+        padding: 12px;
+        background: #ffecec;
+        color: #d8000c;
+        border-radius: 8px;
+        margin-top: 10px;
+        display: none;
+        text-align: center;
+        font-size: 14px;
+    }
+
+    /* Grid style enhancement */
+    .elementor-loop-container {
+        display: grid;
+        gap: var(--grid-column-gap, 30px);
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    }
+    .elementor-loop-container > * {
+        background: #fff;
+        border-radius: 12px;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        padding: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .elementor-loop-container > *:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    }
