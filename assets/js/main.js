@@ -28,16 +28,26 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function filterAndSortPosts() {
         const query = normalizeText(searchInput.value);
-        let visiblePosts = posts.filter(post => normalizeText(post.textContent).includes(query));
-
+        //let visiblePosts = posts.filter(post => normalizeText(post.textContent).includes(query));
+        let visiblePosts = posts.filter(post => {
+        const selectors = LoopFilterSettings.titleSelectors;
+        const targetEl = post.querySelector(selectors);
+        const targetText = targetEl ? normalizeText(targetEl.textContent) : "";
+        return targetText.includes(query);
+        });
         posts.forEach(post => post.style.display = visiblePosts.includes(post) ? '' : 'none');
         noResults.style.display = visiblePosts.length === 0 ? 'block' : 'none';
 
         const sortValue = sortSelect.value;
         if (sortValue !== 'default') {
             visiblePosts.sort((a, b) => {
-                const aTitleEl = a.querySelector('h6, h3, .elementor-post__title');
-                const bTitleEl = b.querySelector('h6, h3, .elementor-post__title');
+                // const aTitleEl = a.querySelector('h6, h3, .elementor-post__title');
+                // const bTitleEl = b.querySelector('h6, h3, .elementor-post__title');
+                const selectors = LoopFilterSettings.titleSelectors || 'h6, h3, .elementor-post__title';
+                console.log("USED SELECTORS:", selectors);
+                const aTitleEl = a.querySelector(selectors);
+                const bTitleEl = b.querySelector(selectors);
+
                 const aText = normalizeText(aTitleEl ? aTitleEl.textContent : a.textContent);
                 const bText = normalizeText(bTitleEl ? bTitleEl.textContent : b.textContent);
                 const aDate = a.getAttribute('data-date') || '';
